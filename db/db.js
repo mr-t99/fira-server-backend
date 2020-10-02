@@ -1,8 +1,8 @@
 const mysql = require('mysql');
 
-//const USER = process.env.FIRA_DB_USER || 'root';
-//const HOST = process.env.FIRA_DB_HOST || 'localhost';
-//const PASSWORD = process.env.FIRA_DB_PSW || '';
+// const USER = process.env.FIRA_DB_USER || 'root';
+// const HOST = process.env.FIRA_DB_HOST || 'localhost';
+// const PASSWORD = process.env.FIRA_DB_PSW || '';
 const USER = 'ngocthangtrantb';
 const HOST =  'www.db4free.net';
 const PASSWORD = 'Ngocthang2411';

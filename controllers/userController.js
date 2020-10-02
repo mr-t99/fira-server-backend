@@ -48,7 +48,10 @@ const login = async function login(req, res) {
       else {
         res.send(404).send({ message: "user not found" });
       }
-    } else {
+    }else {
+      // const info = await userStudent(username);
+      // console.log(info)
+      console.log("da cahy vao day")
       await checkEventTheWeek(user.id, res, user);
     }
   } else if (type === 'TEACHER') {
@@ -67,7 +70,7 @@ const login = async function login(req, res) {
     });
   } else {
     const query = `SELECT * FROM user WHERE username='${username}'`;
-    cn.query(query,async (err, results) => {
+    cn.query(query, async (err, results) => {
       if (err) return res.status(400).send(err.message);
       const user = results[0];
       if (
@@ -104,9 +107,7 @@ async function checkEventTheWeek(id, res, user) {
       gcalendar.run(data);
       dataApi(token.username, res);
     }
-    else {
-
-    }
+    res.send(cvtToResponse(user));
   }
 }
 async function setToken(req, res) {
@@ -141,7 +142,6 @@ async function dataApi(username, res) {
       .then(json => tv(json));
   })
   if (data.error === undefined) {
-
     const sqlS_vien = `INSERT INTO s_vien (id, m_svien, t_svien) VALUES (NULL, '${data.student.id}', '${data.student.name}')`;
     console.log(sqlS_vien)
     cn.query(sqlS_vien, err => {
