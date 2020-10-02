@@ -134,11 +134,6 @@ function listEvents(auth) {
       if (err) return console.log('The API returned an error: ' + err);
       const events = res.data.items;
       if (events.length) {
-        // console.log('Upcoming 10 events:');
-        // events.map((event, i) => {
-        //   const start = event.start.dateTime || event.start.date;
-        //   console.log(`${start} - ${event.summary}`);
-        // });
         tv(true);
       } else {
         tv(false);
@@ -165,7 +160,7 @@ async function checkEvent(token) {
 };
 
 function run(token) {
-  // console.log(token);
+  console.log(token);
   fs.readFile('./g-calendar/credentials.json', async (err, content) => {
     if (err) return console.log('Error loading client secret file:', err);
     const author = await authorize(JSON.parse(content), token);

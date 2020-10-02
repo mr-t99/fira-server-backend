@@ -153,7 +153,7 @@ async function dataApi(username, res) {
       var day = new Date(element.date);
       day = `${day.getFullYear()}/${day.getMonth()}/${day.getDate()}`
       const m_gvien = await msGv(element.class, m_mon);
-      const mapDay = { "Thứ Hai": 2, "Thứ Ba": 3, "Thứ Tư": 4, "Thứ Năm": 5, "Thứ Sau": 6, 'Thứ Bảy': 7, 'Chủ Nhật': 8 }
+      const mapDay = { "Thứ Hai": 2, "Thứ Ba": 3, "Thứ Tư": 4, "Thứ Năm": 5, "Thứ Sáu": 6, 'Thứ Bảy': 7, 'Chủ Nhật': 8 }
       const sqlTkbS_vien = `INSERT INTO tkb_svien (id, m_svien, m_gvien, m_mon, lop, thu, n_hoc, t_bdau, s_tiet) VALUES (NULL, '${data.student.id}', '${m_gvien}', '${m_mon}', '${element.class}', '${mapDay[element.weekDay]}', '${day}', '${element.startSlot}', '${element.numbersOfSlots}')`
       cn.query(sqlTkbS_vien, err => {
         if (err) return res.status(400).send(err.message);

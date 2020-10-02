@@ -3,10 +3,10 @@ const mysql = require('mysql');
 //const USER = process.env.FIRA_DB_USER || 'root';
 //const HOST = process.env.FIRA_DB_HOST || 'localhost';
 //const PASSWORD = process.env.FIRA_DB_PSW || '';
-const USER = 'fira-remind';
-const HOST =  'localhost';
-const PASSWORD = 'fira@2020';
-const DATABASE_NAME = process.env.DATABASE_NAME || 'remind_db';
+const USER = 'ngocthangtrantb';
+const HOST =  'www.db4free.net';
+const PASSWORD = 'Ngocthang2411';
+const DATABASE_NAME = process.env.DATABASE_NAME || 'db_remind';
 
 function createConnection(databaseName) {
   return mysql.createConnection({
